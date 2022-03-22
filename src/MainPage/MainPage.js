@@ -4,9 +4,8 @@ import styles from './MainPage.module.css';
 
 
 export default function MainPage({ data, setCurrent }) {
-    console.log(data);
-     
-    const currenciesArr = Object.keys(data)
+    
+    const currenciesArr = Object.keys(data ?? {})
     const currenciesForRender = currenciesArr.map((item, k) => {
         const i = data[item]
         const diff = Math.floor(((i.Previous - i.Value) / (i.Previous / 100)) * 100)/100
@@ -32,6 +31,17 @@ export default function MainPage({ data, setCurrent }) {
 
     return (
         <div className={styles.body}>
+            <div className={`${styles.currency} ${styles.currencyHeader}`}>
+                <div className={`${styles.block} ${styles.currencyCode}`}>
+                    <p>Код валюты</p>
+                </div>
+                <div className={styles.block}>
+                    <p>Стоимость в ₽</p>
+                </div>
+                <div className={`${styles.block}`}>
+                    <p>Разница с предыдущим днём</p>
+                </div>
+            </div>
             {data ? currenciesForRender : null}
         </div>
     )

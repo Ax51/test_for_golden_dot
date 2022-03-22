@@ -1,4 +1,7 @@
+
 body {
-    margin: 10px;
+    margin: 0 10px;
     padding: 0;
+    max-width: 1000px;
+    width: calc(100vw - 32px); /* othervise window will jump horisontally when overflow is hidden */
 }
