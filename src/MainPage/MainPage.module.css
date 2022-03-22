@@ -1,0 +1,76 @@
+.body {
+    background-color:aliceblue;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.block {
+    display: block;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+.currency {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+    justify-items: stretch;
+    gap:0;
+    text-align: center;
+}
+.currency:hover {
+    text-decoration: underline;
+}
+.currencyDark {
+    background-color:#e2f1ff;
+}
+.rise {
+    color: rgb(18, 161, 18);
+}
+.fall {
+    color: red;
+}
+.hint {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    bottom:0;
+    transform: translateY(100%);
+}
+.currencyCode:hover .hint {
+    display: block;
+    background-color:black;
+    color: white;
+
+    z-index: 2;
+}
+/* .currencyCode:hover .hint::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color:black;
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    transform: translateX(-50%) rotate(45deg);
+
+    z-index: -1;
+} */
+.currencyCode:hover .hint::before {
+    --size: 5px; /* size of triangle */
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-left:var(--size) solid transparent;
+    border-right:var(--size) solid transparent;
+    border-bottom:var(--size) solid black;
+    position: absolute;
+    left: 50%;
+    top: calc(var(--size) * -1);
+    transform: translateX(-50%);
+
+    z-index: -1;
+}
