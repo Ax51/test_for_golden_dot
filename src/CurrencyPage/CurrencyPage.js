@@ -5,10 +5,7 @@ import styles from './CurrencyPage.module.css';
 export default function CurrencyPage({ data, current, resetCurrent }) {
     const { Name, CharCode, Nominal } = current
     
-    console.log(current);
     const historyDataForRender = data.map((item, k, arr) => {
-        // console.log(item.Valute[current.CharCode].Value)
-        // console.log(item.Valute[current.CharCode])
         const currentValute = item.Valute[CharCode]
         const prevValute = k === 0
             ? currentValute

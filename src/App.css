@@ -1,7 +1,32 @@
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 body {
     margin: 0 10px;
     padding: 0;
     max-width: 1000px;
     width: calc(100vw - 32px); /* othervise window will jump horisontally when overflow is hidden */
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.bi-arrow-clockwise {
+    font-size: 5rem;
+    color:black;
+    position: absolute;
+    left:calc(50% - 2.5rem);
+    top:calc(50% - 2.5rem);
+    /* transform: translate(-50%, -50%); */
+    animation: loader 1s infinite linear;
+}
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    } 
 }

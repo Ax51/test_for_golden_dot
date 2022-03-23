@@ -50,9 +50,10 @@ function App() {
             sessionStorage.setItem('data', JSON.stringify(temporaryData))
         }
     }
-
+    console.log(data)
     return (
-        <div className="App">
+        data.length > 0
+        ? <div className="App">
             <MainPage
                 data={data[0]?.Valute}
                 setCurrent={setSelectedCurrent} />
@@ -63,6 +64,9 @@ function App() {
                     resetCurrent={setSelectedCurrent} />
                 : null
             }
+        </div>
+        : <div className="wrapper">
+            <i className="bi bi-arrow-clockwise"/>
         </div>
     );
 }
